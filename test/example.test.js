@@ -16,7 +16,7 @@ test('should take in a shoe and return li', (expect) => {
         price: 60,
     };
 
-    const expected = `<li class="shoe-item"><p class="shoe-id">1</p><h2 class="shoe-name">Nike</h2><img class="shoe-image" src="assets/nike.PNG"><p class="shoe-description">A just do it Shoe</p><p class="shoe-category">Athletic</p><p class="shoe-price">$60</p><button class="button" value="1">Add to cart</button></li>`;
+    const expected = `<li class="shoe-item"><h2 class="shoe-name">Nike</h2><img class="shoe-image" src="../assets/nike.PNG"><p class="shoe-description">A just do it Shoe</p><p class="shoe-category">Athletic</p><p class="shoe-price">$60</p><button class="button" value="1">Add to cart</button></li>`;
 
     //Act 
     // Call the function you're testing and set the result to a const
