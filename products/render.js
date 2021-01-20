@@ -5,11 +5,6 @@ export function renderShoes(shoes) {
     const li = document.createElement('li');
     li.classList.add('shoe-item');
 
-    const pID = document.createElement('p');
-    pID.classList.add('shoe-id');
-    pID.textContent = shoes.id;
-    li.append(pID);
-
 
     const h2 = document.createElement('h2');
     h2.classList.add('shoe-name');
@@ -19,7 +14,7 @@ export function renderShoes(shoes) {
     const img = document.createElement('img');
     img.classList.add('shoe-image');
     li.append(img);
-    img.src = `assets/${shoes.image}`;
+    img.src = `../assets/${shoes.image}`;
 
     const pDescription = document.createElement('p');
     pDescription.classList.add('shoe-description');
