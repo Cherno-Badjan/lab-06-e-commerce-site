@@ -1,13 +1,64 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { renderShoes } from '../products/render.js';
+import { findById } from '../cart/utils.js';
+
+export const shoes = [
+    {
+        id: 1,
+        name: 'Nike',
+        image: 'nike.PNG',
+        description: 'A just do it Shoe',
+        category: 'Athletic',
+        price: 60,
+    },
+    {
+        id: 2,
+        name: 'Adidas',
+        image: 'adidas.PNG',
+        description: 'A stripes kind of Shoe',
+        category: 'Athletic',
+        price: 50,
+    },
+    {
+        id: 3,
+        name: 'Puma',
+        image: 'puma.PNG',
+        description: 'A feline Shoe',
+        category: 'Athletic',
+        price: 30,
+    },
+    {
+        id: 4,
+        name: 'Jordan',
+        image: 'jordan.PNG',
+        description: 'A last dance kind of Shoe',
+        category: 'Athletic',
+        price: 300,
+    },
+    {
+        id: 5,
+        name: 'Tods',
+        image: 'tods.PNG',
+        description: 'A driving Shoe',
+        category: 'Smart',
+        price: 400,
+    },
+    {
+        id: 6,
+        name: 'Clarks',
+        image: 'clarks.PNG',
+        description: 'A proper  Shoe',
+        category: 'Smart',
+        price: 120,
+    },
+];
 
 const test = QUnit.test;
 
-test('should take in a shoe and return li', (expect) => {
+test('findByID: takes in ID (1) and an array (shoes) and returns item in array with matching ID (Nike)', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const nike = {
+    const expected = {
         id: 1,
         name: 'Nike',
         image: 'nike.PNG',
@@ -16,13 +67,11 @@ test('should take in a shoe and return li', (expect) => {
         price: 60,
     };
 
-    const expected = `<li class="shoe-item"><h2 class="shoe-name">Nike</h2><img class="shoe-image" src="../assets/nike.PNG"><p class="shoe-description">A just do it Shoe</p><p class="shoe-category">Athletic</p><p class="shoe-price">$60</p><button class="button" value="1">Add to cart</button></li>`;
-
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = renderShoes(nike);
+    const actual = findById(1, shoes);
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual.outerHTML, expected);
+    expect.deepEqual(actual, expected);
 });
