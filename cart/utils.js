@@ -8,11 +8,9 @@ export function findById(id, array) {
     return null;
 }
 
-export function calcItemTotal(cartItem, price) {
+export function calcItemTotal(cartItem, shoe) {
 
-    const shoeTotal = cartItem * price;
-    return shoeTotal;
-
+    return cartItem.quantity * shoe.price;
 }
 
 

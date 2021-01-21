@@ -112,7 +112,7 @@ test('Take in cart line item and corresponding product and return static HTML da
     const nikeShoe = findById(1, shoes);
 
 
-    const expected = `<tr><td>Nike</td><td>4</td><td>$60</td></tr>`;
+    const expected = `<tr><td>Nike</td><td>4</td><td>$240</td></tr>`;
 
     //Act 
     // Call the function you're testing and set the result to a const

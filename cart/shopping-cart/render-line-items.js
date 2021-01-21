@@ -1,4 +1,4 @@
-
+import { calcItemTotal } from '../utils.js';
 
 export function renderTable(cartItem, shoe) {
     const quantity = cartItem.quantity;
@@ -12,7 +12,7 @@ export function renderTable(cartItem, shoe) {
 
     shoeTd.textContent = shoe.name;
     quantityTd.textContent = quantity;
-    priceTd.textContent = `$${shoe.price}`;
+    priceTd.textContent = `$${calcItemTotal(cartItem, shoe)}`;
 
     tr.append(shoeTd, quantityTd, priceTd);
     console.log(tr);
