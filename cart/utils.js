@@ -9,3 +9,11 @@ export function findById(id, array) {
     return null;
 }
 
+export function calcItemTotal(cartItem, price) {
+
+    const shoeTotal = cartItem * price;
+    return shoeTotal;
+
+}
+
+
