@@ -11,7 +11,7 @@ main {
 
 body {
     background-color: aqua;
-    background-image: url('../assets/nike.PNG');
+    background-image: url('https://static.nike.com/a/images/w_1536,c_limit/9de44154-c8c3-4f77-b47e-d992b7b96379/image.jpg');
 }
 
 .welcome {
