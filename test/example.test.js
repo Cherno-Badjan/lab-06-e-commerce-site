@@ -166,7 +166,6 @@ test('Take in cart array and products array and return total of products in cart
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = calcOrderTotal(cart, shoes);
-    console.log(actual)
 
 
     //Expect

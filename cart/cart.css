@@ -1,0 +1,13 @@
+*{box-sizing: border-box;}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: calc(var(--footer-height));
+}
+
+body {
+    background-color: aqua;
+    background-image: url('../assets/nike.PNG');
+}
