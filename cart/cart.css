@@ -5,9 +5,18 @@ main {
     display: flex;
     flex-direction: column;
     margin-bottom: calc(var(--footer-height));
+    font-size: large;
+    font-weight: bolder;
 }
 
 body {
     background-color: aqua;
     background-image: url('../assets/nike.PNG');
+}
+
+.welcome {
+    display:flex;
+    justify-content: left;
+    color: orange;
+
 }
