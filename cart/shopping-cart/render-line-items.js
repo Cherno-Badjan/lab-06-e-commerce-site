@@ -15,8 +15,7 @@ export function renderTable(cartItem, shoe) {
     priceTd.textContent = `$${calcItemTotal(cartItem, shoe)}`;
 
     tr.append(shoeTd, quantityTd, priceTd);
-    console.log(tr);
-    console.log(quantity);
+
 
     return tr;
 
