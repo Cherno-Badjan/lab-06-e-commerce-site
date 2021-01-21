@@ -9,7 +9,7 @@ export const cart = [
     },
     {
         id: 3,
-        quantity: 1
+        quantity: 1,
     },
     {
         id: 4,

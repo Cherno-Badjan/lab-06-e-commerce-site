@@ -1,10 +1,10 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-/*import { findById } from '../cart/utils.js';*/
-/*import { cart } from '../cart/cart-data.js';*/
-/*import { calcItemTotal } from '../cart/utils.js';*/
+import { calcOrderTotal, findById } from '../cart/utils.js';
+import { calcItemTotal } from '../cart/utils.js';
 import { renderTable } from '../cart/shopping-cart/render-line-items.js';
-import { findById } from '../cart/utils.js';
+
+const test = QUnit.test;
 
 
 export const shoes = [
@@ -58,7 +58,25 @@ export const shoes = [
     },
 ];
 
-/*const test = QUnit.test;
+export const cart = [
+    {
+        id: 1,
+        quantity: 4,
+    },
+    {
+        id: 2,
+        quantity: 2,
+    },
+    {
+        id: 3,
+        quantity: 1,
+    },
+    {
+        id: 4,
+        quantity: 2,
+    },
+];
+
 
 test('findByID: takes in ID (1) and an array (shoes) and returns item in array with matching ID (Nike)', (expect) => {
     //Arrange
@@ -79,25 +97,42 @@ test('findByID: takes in ID (1) and an array (shoes) and returns item in array w
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
-});*/
+});
 
-/*const test = QUnit.test;
+
 
 test('Take in cartItem and price and returns total price of cartItem )', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = 240;
 
+    const item = [
+        {
+            id: 1,
+            quantity: 4,
+        },
+    ];
+    const shoe = [
+        {
+            id: 1,
+            name: 'Nike',
+            image: 'nike.PNG',
+            description: 'A just do it Shoe',
+            category: 'Athletic',
+            price: 60,
+        },
+    ];
+
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = calcItemTotal(4, 60);
+    const actual = calcItemTotal(item[0], shoe[0]);
 
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
-});*/
+});
 
-const test = QUnit.test;
+
 
 test('Take in cart line item and corresponding product and return static HTML data. )', (expect) => {
     //Arrange
@@ -122,3 +157,20 @@ test('Take in cart line item and corresponding product and return static HTML da
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
 });
+test('Take in cart array and products array and return total of products in cart )', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+
+    const expected = 970;
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = calcOrderTotal(cart, shoes);
+    console.log(actual)
+
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
