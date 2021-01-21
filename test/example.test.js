@@ -2,10 +2,12 @@
 // import { example } from '../example.js';
 /*import { findById } from '../cart/utils.js';*/
 /*import { cart } from '../cart/cart-data.js';*/
-import { calcItemTotal } from '../cart/utils.js';
+/*import { calcItemTotal } from '../cart/utils.js';*/
+import { renderTable } from '../cart/shopping-cart/render-line-items.js';
+import { findById } from '../cart/utils.js';
 
 
-/*export const shoes = [
+export const shoes = [
     {
         id: 1,
         name: 'Nike',
@@ -56,7 +58,7 @@ import { calcItemTotal } from '../cart/utils.js';
     },
 ];
 
-const test = QUnit.test;
+/*const test = QUnit.test;
 
 test('findByID: takes in ID (1) and an array (shoes) and returns item in array with matching ID (Nike)', (expect) => {
     //Arrange
@@ -79,9 +81,9 @@ test('findByID: takes in ID (1) and an array (shoes) and returns item in array w
     expect.deepEqual(actual, expected);
 });*/
 
-const test = QUnit.test;
+/*const test = QUnit.test;
 
-test('Take in cartItem and shoe and returns total price of cartItem )', (expect) => {
+test('Take in cartItem and price and returns total price of cartItem )', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = 240;
@@ -93,4 +95,30 @@ test('Take in cartItem and shoe and returns total price of cartItem )', (expect)
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
+});*/
+
+const test = QUnit.test;
+
+test('Take in cart line item and corresponding product and return static HTML data. )', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const cartItem1 = [
+        {
+            id: 1,
+            quantity: 4,
+        },
+    ];
+
+    const nikeShoe = findById(1, shoes);
+
+
+    const expected = `<tr><td>Nike</td><td>4</td><td>$60</td></tr>`;
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = renderTable(cartItem1[0], nikeShoe);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual.outerHTML, expected);
 });
