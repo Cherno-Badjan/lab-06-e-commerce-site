@@ -46,6 +46,8 @@ button.addEventListener('click', () => {
 
     alert(JSON.stringify(cart, true, 2));
     localStorage.clear();
+    location.href = '../index.html';
+
 
     td3.textContent = '';
     tbody.textContent = '';
