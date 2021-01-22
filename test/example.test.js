@@ -3,7 +3,7 @@
 import { calcOrderTotal, findById } from '../cart/utils.js';
 import { calcItemTotal } from '../cart/utils.js';
 import { renderTable } from '../cart/shopping-cart/render-line-items.js';
-import { getCart } from '../cart/cart-utils.js';
+import { getCart, clearCart, setCart } from '../cart/cart-utils.js';
 
 const test = QUnit.test;
 
@@ -200,6 +200,43 @@ test('Should get cart from local storage', (expect) => {
     const cart = getCart();
 
     expect.deepEqual(cart, testCart);
+});
+test('clearCart function should stringify defaultEmptyCart and send it to local storage', (expect) => {
+    const defaultEmptyCart = [];
+
+    clearCart();
+
+    const cart = getCart();
+
+    expect.deepEqual(cart, defaultEmptyCart);
+});
+test('setCart function should stringify Cart and send it to local storage', (expect) => {
+    const testCart = [
+        {
+            id: 1,
+            quantity: 4,
+        },
+        {
+            id: 2,
+            quantity: 2,
+        },
+        {
+            id: 3,
+            quantity: 1,
+        },
+        {
+            id: 4,
+            quantity: 2,
+        },
+    ];
+
+    const stringyTestCart = JSON.stringify(testCart);
+
+    const expected = localStorage.setItem('CART', stringyTestCart);
+
+    const cart = setCart(testCart);
+
+    expect.deepEqual(cart, expected);
 });
 
 
