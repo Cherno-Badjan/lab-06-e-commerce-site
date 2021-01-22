@@ -11,8 +11,22 @@ li{
     border: 1px solid black;
     text-align: center;
     align-items: baseline;
+    border-radius: 25px;
+    background-color: var(--color5);
 }
 
 .shoe-image{
     width: 200px;
+    background-color: var(--color5);
 }
+
+body{
+    --color1: hsla(114, 4%, 44%, 1);
+--color2: hsla(196, 19%, 64%, 1);
+--color3: hsla(211, 86%, 78%, 1);
+--color4: hsla(211, 100%, 83%, 1);
+--color5: hsla(231, 100%, 97%, 1);
+    height: 100%;
+    background-color: var(--color2);
+}
+

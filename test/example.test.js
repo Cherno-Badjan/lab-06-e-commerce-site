@@ -3,6 +3,7 @@
 import { calcOrderTotal, findById } from '../cart/utils.js';
 import { calcItemTotal } from '../cart/utils.js';
 import { renderTable } from '../cart/shopping-cart/render-line-items.js';
+import { getCart } from '../cart/cart-utils.js';
 
 const test = QUnit.test;
 
@@ -172,4 +173,33 @@ test('Take in cart array and products array and return total of products in cart
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
 });
+
+test('Should get cart from local storage', (expect) => {
+    const testCart = [
+        {
+            id: 1,
+            quantity: 4,
+        },
+        {
+            id: 2,
+            quantity: 2,
+        },
+        {
+            id: 3,
+            quantity: 1,
+        },
+        {
+            id: 4,
+            quantity: 2,
+        },
+    ];
+    const stringyCart = JSON.stringify(testCart);
+
+    localStorage.setItem('CART', stringyCart);
+
+    const cart = getCart();
+
+    expect.deepEqual(cart, testCart);
+});
+
 

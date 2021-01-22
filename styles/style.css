@@ -20,6 +20,7 @@ body {
     
     font-family: 'Titillium Web', sans-serif;
     background-color: var(--color2);
+    background-image: url('../assets/store-front.png');
 }
 
 main {
@@ -72,6 +73,8 @@ h2 {
 
 .main-logo {
     animation: pulse 5s infinite ease-in-out;
+    width: 100px;
+    height:100px;
 }
 
 header img {
