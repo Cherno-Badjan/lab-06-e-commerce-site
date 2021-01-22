@@ -1,3 +1,4 @@
+//2.Dummy data for shopping cart
 export const cart = [
     {
         id: 1,

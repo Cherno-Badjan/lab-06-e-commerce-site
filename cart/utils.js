@@ -1,5 +1,4 @@
-/*import { renderTable } from './shopping-cart/render-line-items';*/
-
+//3.Uses the ID from the cart array to match to id in shoes array and return item(shoe).
 export function findById(id, array) {
     for (let item of array) {
         if (item.id === id) {
@@ -10,10 +9,13 @@ export function findById(id, array) {
     return null;
 }
 
+//4.Uses cart quantity and shoe price to give total of a products in cart
 export function calcItemTotal(cartItem, shoe) {
 
     return cartItem.quantity * shoe.price;
 }
+
+//7: Looping through the cart/shoe data using the calcItemTotal function to return item totals and then using the calcOrderTotal to return the cart total
 
 let orderTotal = 0;
 

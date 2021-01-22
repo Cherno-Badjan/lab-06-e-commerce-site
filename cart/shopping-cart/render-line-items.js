@@ -1,5 +1,5 @@
 import { calcItemTotal } from '../utils.js';
-
+//5.Manipulate DOM and creates elements (HTML table elements) to display data.
 export function renderTable(cartItem, shoe) {
     const quantity = cartItem.quantity;
 

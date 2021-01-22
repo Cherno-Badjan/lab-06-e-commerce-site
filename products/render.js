@@ -1,3 +1,5 @@
+import { addToCart } from '../cart/cart-utils.js';
+
 export function renderShoes(shoes) {
 
 
@@ -32,9 +34,10 @@ export function renderShoes(shoes) {
     li.append(pPrice);
 
     const button = document.createElement('button');
+    button.addEventListener('click', () => {
+        addToCart(shoes.id);
+    });
     button.textContent = 'Add to cart';
-    button.classList.add('button');
-    button.value = shoes.id;
     li.append(button);
 
     return li;
