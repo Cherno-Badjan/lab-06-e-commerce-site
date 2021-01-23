@@ -31,17 +31,17 @@ export function setCart(cart) {
     localStorage.setItem(CART, stringyCart);
 }
 
-export function addToCart(id) {
+export function addToCart(id, input) {
     const cart = getCart();
 
     const cartItem = findById(id, cart);
 
     if (cartItem) {
-        cartItem.quantity++;
+        cartItem.quantity += input;
     } else {
         const newShoe = {
             id: id,
-            quantity: 1
+            quantity: input
         };
         cart.push(newShoe);
     }

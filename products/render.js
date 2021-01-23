@@ -33,9 +33,23 @@ export function renderShoes(shoes) {
     pPrice.textContent = `$${shoes.price}`;
     li.append(pPrice);
 
+    const div = document.createElement('div');
+    div.classList.add('input-button');
+    li.append(div);
+
+    const quantInput = document.createElement('input');
+    quantInput.type = 'number';
+    quantInput.min = 1;
+    div.append(quantInput);
+
+
+
     const button = document.createElement('button');
     button.addEventListener('click', () => {
-        addToCart(shoes.id);
+        const quantity = quantInput.valueAsNumber;
+        addToCart(shoes.id, quantity);
+        quantInput.value = '';
+
     });
     button.textContent = 'Add to cart';
     li.append(button);
