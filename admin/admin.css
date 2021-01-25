@@ -1,0 +1,23 @@
+*{box-sizing: border-box;}
+
+
+#form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+input{
+    width: 75%;
+    justify-content: flex-start;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    width: 20%;
+    align-self: center;
+}

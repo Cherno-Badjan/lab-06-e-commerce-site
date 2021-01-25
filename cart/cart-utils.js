@@ -1,4 +1,5 @@
 import { findById } from '../cart/utils.js';
+import { shoes } from '../products/shoe.js';
 
 const CART = 'CART';
 
@@ -48,3 +49,24 @@ export function addToCart(id, input) {
     setCart(cart);
 
 }
+
+export function getInventory() {
+    const PRODUCT = 'PRODUCT';
+
+    let shoe = localStorage.getItem(PRODUCT);
+
+    if (!shoe) {
+        shoe = JSON.stringify(shoes);
+
+        localStorage.setItem(PRODUCT, shoe);
+    }
+
+    const parsedShoe = JSON.parse(shoe);
+
+    return parsedShoe;
+
+}
+
+export function addProduct() {
+
+} 
